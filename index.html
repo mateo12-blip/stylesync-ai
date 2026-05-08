@@ -15,7 +15,20 @@
 
     <button onclick="scrollToFeatures()">Get Started</button>
   </header>
+<section class="generator">
+  <h2>AI Outfit Generator</h2>
+  <p>Tell StyleSync AI where you're going and get instant outfit ideas.</p>
 
+  <input 
+    id="userInput" 
+    type="text" 
+    placeholder="e.g. date, party, interview, school..." 
+  />
+
+  <button onclick="generateOutfit()">Generate Outfit</button>
+
+  <div id="result" class="result-box"></div>
+</section>
   <!-- FEATURES -->
   <section id="features" class="features">
     <h2>What It Does</h2>
