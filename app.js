@@ -9,7 +9,7 @@ async function generateOutfit() {
 
   result.innerHTML = "Thinking like a stylist... 🤖";
 
-  const response = await fetch("https://YOUR-VERCEL-URL/api/generate", {
+  const response = await fetch(, "https://project-odxdf-1xif68i2b-bensongithii83-3942s-projects.vercel.app/api/generate") {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
