@@ -2,54 +2,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 body {
-  background: #0b0b0f;
+  background: radial-gradient(circle at top, #0f0f1a, #050507);
   color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background: radial-gradient(circle at top, #1a1a2e, #0b0b0f);
+  padding: 140px 20px 100px;
 }
 
 .hero h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #9b9bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  color: #b3b3b3;
-  max-width: 600px;
-  margin: auto;
+  color: #b5b5b5;
+  max-width: 650px;
+  margin: 20px auto;
   font-size: 18px;
 }
 
 .hero button {
   margin-top: 25px;
-  padding: 14px 26px;
+  padding: 14px 28px;
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
-  background: white;
-  color: black;
-  cursor: pointer;
+  background: linear-gradient(135deg, #6c63ff, #9b9bff);
+  color: white;
   font-weight: bold;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .hero button:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
 }
 
 /* AI GENERATOR */
 .generator {
-  padding: 80px 20px;
   text-align: center;
+  padding: 80px 20px;
 }
 
 .generator h2 {
@@ -58,39 +62,43 @@ body {
 }
 
 .generator p {
-  color: #aaa;
+  color: #a8a8a8;
   margin-bottom: 20px;
 }
 
 .generator input {
-  width: 80%;
-  max-width: 400px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
+  width: 90%;
+  max-width: 420px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: rgba(255,255,255,0.05);
+  color: white;
   outline: none;
+  backdrop-filter: blur(10px);
 }
 
 .generator button {
   margin-top: 15px;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border: none;
-  background: white;
-  color: black;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6c63ff, #9b9bff);
+  color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .result-box {
   margin-top: 30px;
   padding: 20px;
-  background: #1a1a1a;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  color: #ddd;
+  backdrop-filter: blur(12px);
 }
 
 /* FEATURES */
@@ -106,29 +114,31 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   max-width: 1000px;
   margin: auto;
 }
 
 .card {
-  background: #15151f;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #222;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 22px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .card:hover {
   transform: translateY(-5px);
+  border-color: #6c63ff;
 }
 
-/* HOW IT WORKS */
+/* HOW */
 .how {
   padding: 80px 20px;
   text-align: center;
-  background: #0f0f16;
+  background: rgba(255,255,255,0.02);
 }
 
 .how h2 {
@@ -137,10 +147,10 @@ body {
 }
 
 .how ol {
-  max-width: 400px;
+  max-width: 420px;
   margin: auto;
   text-align: left;
-  color: #ccc;
+  color: #cfcfcf;
 }
 
 .how li {
@@ -151,33 +161,32 @@ body {
 .cta {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg, #1a1a2e, #0b0b0f);
 }
 
 .cta h2 {
   font-size: 34px;
-  margin-bottom: 10px;
 }
 
 .cta p {
-  color: #aaa;
-  margin-bottom: 20px;
+  color: #a8a8a8;
+  margin-top: 10px;
 }
 
 .cta button {
-  padding: 14px 26px;
+  margin-top: 20px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 10px;
-  background: white;
-  color: black;
-  cursor: pointer;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6c63ff, #9b9bff);
+  color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   color: #666;
-  font-size: 14px;
+  font-size: 13px;
 }
