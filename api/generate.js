@@ -6,29 +6,37 @@ const client = new OpenAI({
 
 export default async function handler(req, res) {
   try {
-    const { input } = req.body;
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Only POST allowed" });
+    }
+
+    const { input } = req.body || {};
+
+    if (!input) {
+      return res.status(400).json({ error: "No input provided" });
+    }
 
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
-          content: "You are an elite AI fashion stylist. Suggest stylish outfits based on the user's occasion and vibe."
+          content: "You are a luxury AI fashion stylist. Suggest stylish outfits based on occasion, weather, and vibe."
         },
         {
           role: "user",
-          content: `Suggest an outfit for: ${input}`
+          content: input
         }
       ]
     });
 
-    res.status(200).json({
+    return res.status(200).json({
       result: completion.choices[0].message.content
     });
 
   } catch (error) {
-    res.status(500).json({
-      error: "AI request failed"
+    return res.status(500).json({
+      error: error.message
     });
   }
 }
