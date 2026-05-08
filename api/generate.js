@@ -10,10 +10,11 @@ export default async function handler(req, res) {
       return res.status(405).json({ error: "Only POST allowed" });
     }
 
-    const { input } = req.body || {};
+    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    const input = body?.input;
 
     if (!input) {
-      return res.status(400).json({ error: "No input provided" });
+      return res.status(400).json({ error: "Missing input" });
     }
 
     const completion = await client.chat.completions.create({
@@ -21,7 +22,7 @@ export default async function handler(req, res) {
       messages: [
         {
           role: "system",
-          content: "You are a luxury AI fashion stylist. Suggest stylish outfits based on occasion, weather, and vibe."
+          content: "You are a high-end fashion AI stylist."
         },
         {
           role: "user",
