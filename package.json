@@ -1,44 +1,8 @@
-import OpenAI from "openai";
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
-
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  try {
-    const { input } = req.body || {};
-
-    if (!input) {
-      return res.status(400).json({ error: "No input provided" });
-    }
-
-    const completion = await client.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content: "You are a luxury fashion AI stylist. Give detailed outfit suggestions."
-        },
-        {
-          role: "user",
-          content: input
-        }
-      ]
-    });
-
-    return res.status(200).json({
-      result: completion.choices[0].message.content
-    });
-
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      error: "AI request failed",
-      details: error.message
-    });
+{
+  "name": "stylesync-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "openai": "^4.56.0"
   }
 }
